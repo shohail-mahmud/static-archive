@@ -106,6 +106,13 @@
 
     baseImg.src = BASE_SRC;
     revealVideo.src = REVEAL_SRC;
+    revealVideo.playbackRate = 0.9;
+    revealVideo.addEventListener("loadedmetadata", () => {
+      revealVideo.playbackRate = 0.9;
+    });
+    revealVideo.addEventListener("play", () => {
+      revealVideo.playbackRate = 0.9;
+    });
     revealVideo.play().catch(() => {});
 
     const BAYER4 = [
